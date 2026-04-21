@@ -163,7 +163,10 @@
     .contact-pill { font-size: 12px; color: var(--text-secondary); padding: 6px 14px; border: 0.5px solid var(--border); border-radius: 20px; text-decoration: none; }
     .contact-pill:hover { color: var(--amber-400); border-color: var(--amber-400); }
 
-    .disclaimer { font-size: 10px; color: var(--text-tertiary); line-height: 1.6; }
+    .co-pill-link { text-decoration: none; transition: opacity 0.15s; }
+    .co-pill-link:hover { opacity: 0.75; }
+    .co-name-link { text-decoration: none; color: var(--text-primary); font-size: 13px; font-weight: 500; border-bottom: 0.5px solid var(--border); transition: color 0.15s, border-color 0.15s; }
+    .co-name-link:hover { color: var(--amber-400); border-color: var(--amber-400); }
 
     /* ── Responsive ── */
     @media (max-width: 620px) {
@@ -258,7 +261,7 @@
         <div class="co-row">
           <div class="co-dot"></div>
           <div>
-            <p class="co-name">Resolvd.ai</p>
+            <a href="https://resolvd.ai" target="_blank" class="co-name co-name-link">Resolvd.ai</a>
             <p class="co-note">Healthcare AI · $7M Seed Round</p>
             <p class="co-customers">Customers: Emory, Grady, Wellstar</p>
           </div>
@@ -267,7 +270,7 @@
         <div class="co-row">
           <div class="co-dot"></div>
           <div>
-            <p class="co-name">Skej</p>
+            <a href="https://skej.com" target="_blank" class="co-name co-name-link">Skej</a>
             <p class="co-note">Applied AI · $AMZN Pilot</p>
           </div>
         </div>
@@ -275,7 +278,7 @@
         <div class="co-row">
           <div class="co-dot"></div>
           <div>
-            <p class="co-name">Girl Beer</p>
+            <a href="https://drinkgirlbeer.com" target="_blank" class="co-name co-name-link">Girl Beer</a>
             <p class="co-note">CPG · $7M Expected Revenue 2026 · Top 20% Whole Foods Velocity</p>
           </div>
         </div>
@@ -283,7 +286,7 @@
         <div class="co-row">
           <div class="co-dot"></div>
           <div>
-            <p class="co-name">Aesthetic</p>
+            <a href="https://myaesthetic.ai" target="_blank" class="co-name co-name-link">Aesthetic</a>
             <p class="co-note">Agentic Shopping · 15,000+ Users · $135 AOV</p>
           </div>
         </div>
@@ -291,7 +294,7 @@
         <div class="co-row">
           <div class="co-dot"></div>
           <div>
-            <p class="co-name">Kangaroo Biomedical</p>
+            <span class="co-name">Kangaroo Bio <span style="font-size: 10px; font-weight: 500; letter-spacing: 0.06em; color: var(--text-tertiary);">STEALTH</span></span>
             <p class="co-note">Deep Tech · Artificial Wombs · Co-Founded by Dr. George Church</p>
           </div>
         </div>
@@ -310,25 +313,34 @@
         <div style="flex:1;">
           <p class="gp-name">Maya Bakhai</p>
           <p class="gp-title">Founder &amp; Managing Partner · Forbes 30 Under 30</p>
-          <p class="track-head">Prior track record</p>
+          <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">Maya has invested in 150+ companies over her career. Prior to launching Spice Capital she was investing on behalf of NBA player Kevin Durant.</p>
+          <p class="track-head">Track record</p>
           <div class="track-section">
             <p class="track-sub">Unicorns <em>($1B+ valuation)</em></p>
             <div class="pills-vertical">
-              <span class="co-pill">Mercury</span>
-              <span class="co-pill">Postmates</span>
-              <span class="co-pill">Rubrik</span>
-              <span class="co-pill">Hugging Face</span>
-              <span class="co-pill">Underdog Fantasy</span>
-              <span class="co-pill">Ethos</span>
-              <span class="co-pill">Skydio</span>
+              <a href="https://ethoslife.com" target="_blank" class="co-pill co-pill-link">Ethos <span style="font-size:10px; opacity:0.6;">$LIFE</span></a>
+              <a href="https://huggingface.co" target="_blank" class="co-pill co-pill-link">Hugging Face</a>
+              <a href="https://mercury.com" target="_blank" class="co-pill co-pill-link">Mercury</a>
+              <a href="https://mubi.com" target="_blank" class="co-pill co-pill-link">MUBI</a>
+              <a href="https://uber.com" target="_blank" class="co-pill co-pill-link">Postmates <span style="font-size:10px; opacity:0.6;">$UBER</span></a>
+              <a href="https://rubrik.com" target="_blank" class="co-pill co-pill-link">Rubrik <span style="font-size:10px; opacity:0.6;">$RBRK</span></a>
+              <a href="https://skydio.com" target="_blank" class="co-pill co-pill-link">Skydio</a>
+              <a href="https://underdogfantasy.com" target="_blank" class="co-pill co-pill-link">Underdog Fantasy</a>
+              <a href="https://underdogsports.com" target="_blank" class="co-pill co-pill-link">Underdog Sports</a>
             </div>
           </div>
           <div class="track-section">
             <p class="track-sub">Decacorns <em>($10B+ valuation)</em></p>
             <div class="pills-vertical">
-              <span class="co-pill">Robinhood</span>
-              <span class="co-pill">WHOOP</span>
-              <span class="co-pill">Coinbase</span>
+              <a href="https://coinbase.com" target="_blank" class="co-pill co-pill-link">Coinbase <span style="font-size:10px; opacity:0.6;">$COIN</span></a>
+              <a href="https://robinhood.com" target="_blank" class="co-pill co-pill-link">Robinhood <span style="font-size:10px; opacity:0.6;">$HOOD</span></a>
+              <a href="https://whoop.com" target="_blank" class="co-pill co-pill-link">WHOOP</a>
+            </div>
+          </div>
+          <div class="track-section">
+            <p class="track-sub">1T+ <em>($1T+ valuation)</em></p>
+            <div class="pills-vertical">
+              <a href="https://spacex.com" target="_blank" class="co-pill co-pill-link">SpaceX</a>
             </div>
           </div>
         </div>
