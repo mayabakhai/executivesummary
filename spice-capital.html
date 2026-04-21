@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Capital — Fund II</title>
+
+  <!-- Open Graph / Link Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Spice Capital — Fund II" />
+  <meta property="og:description" content="The first institutional stop for founders. Backing high-conviction, early-stage founders at the intersection of AI, Blockchain, Consumer, and Deep Tech." />
+  <meta property="og:url" content="https://spicecapital.xyz" />
+  <!-- Replace the image URL below with a hosted screenshot of the one-pager once live -->
+  <meta property="og:image" content="https://spicecapital.xyz/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Spice Capital" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spice Capital — Fund II" />
+  <meta name="twitter:description" content="The first institutional stop for founders. Backing high-conviction, early-stage founders at the intersection of AI, Blockchain, Consumer, and Deep Tech." />
+  <meta name="twitter:image" content="https://spicecapital.xyz/preview.png" />
+
+  <!-- WhatsApp / Telegram / iMessage use OG tags above -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber-50: #FAEEDA;
+      --amber-400: #BA7517;
+      --amber-500: #EF9F27;
+      --amber-900: #633806;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --text-tertiary: #888;
+      --border: #e0ddd6;
+      --border-light: #ece9e2;
+      --bg: #ffffff;
+      --bg-secondary: #f8f6f2;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 16px;
+      border: 0.5px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    /* Header */
+    .header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 6px; }
+    .header-left { flex: 1; }
+    .header-right { text-align: right; flex-shrink: 0; }
+    .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .logo-icon { width: 32px; height: 32px; flex-shrink: 0; }
+    .logo-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+    .tagline { font-size: 12px; color: var(--amber-400); font-weight: 500; letter-spacing: 0.02em; margin: 0 0 10px; padding-left: 42px; }
+    .description { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; max-width: 400px; line-height: 1.6; }
+    .badge-fund { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: var(--amber-50); color: var(--amber-900); letter-spacing: 0.04em; }
+    .badge-pill { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 0.5px solid var(--border); color: var(--text-secondary); }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .confidential { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 4px; }
+    .date { font-size: 11px; color: var(--text-secondary); }
+
+    /* Divider */
+    .divider { height: 0.5px; background: var(--border-light); margin: 20px 0; }
+
+    /* Stats bar */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-light);
+      border: 0.5px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .stat-cell { background: var(--bg); padding: 16px 18px; }
+    .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 4px; }
+    .stat-val { font-size: 22px; font-weight: 500; }
+
+    /* Two-col grid */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+
+    /* Section head */
+    .section-head { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-400); margin-bottom: 14px; }
+
+    /* Thesis */
+    .thesis-item { display: flex; gap: 10px; margin-bottom: 12px; }
+    .thesis-num { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--amber-500); line-height: 1.2; min-width: 20px; }
+    .thesis-text { font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+    .thesis-text strong { color: var(--text-primary); font-weight: 500; }
+
+    /* Portfolio */
+    .portfolio-list { display: flex; flex-direction: column; gap: 10px; }
+    .co-row { display: flex; align-items: flex-start; gap: 8px; padding: 2px 0; }
+    .co-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber-400); flex-shrink: 0; margin-top: 5px; }
+    .co-name { font-size: 13px; font-weight: 500; }
+    .co-note { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+    .co-customers { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; font-style: italic; }
+    .co-divider { height: 0.5px; background: var(--border-light); }
+
+    /* GP */
+    .gp-row { display: flex; gap: 12px; align-items: flex-start; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--amber-50); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: var(--amber-900); flex-shrink: 0; }
+    .gp-name { font-size: 14px; font-weight: 500; margin-bottom: 1px; }
+    .gp-title { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; }
+    .track-head { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px; }
+    .track-sub { font-size: 10px; color: var(--text-tertiary); margin-bottom: 5px; }
+    .track-sub em { font-style: italic; }
+    .co-pill { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--amber-50); color: var(--amber-900); font-weight: 500; }
+    .pills-vertical { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+    .track-section { margin-bottom: 10px; }
+
+    /* Fund economics */
+    .econ-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border-light);
+      border: 0.5px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .econ-cell { background: var(--bg); padding: 12px 14px; }
+    .econ-val { font-size: 16px; font-weight: 500; margin-top: 2px; }
+    .econ-note { font-size: 11px; color: var(--text-tertiary); line-height: 1.6; }
+
+    /* Footer CTA */
+    .cta-bar {
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .cta-title { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+    .cta-sub { font-size: 12px; color: var(--text-secondary); }
+    .contact-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .contact-pill { font-size: 12px; color: var(--text-secondary); padding: 6px 14px; border: 0.5px solid var(--border); border-radius: 20px; text-decoration: none; }
+    .contact-pill:hover { color: var(--amber-400); border-color: var(--amber-400); }
+
+    .disclaimer { font-size: 10px; color: var(--text-tertiary); line-height: 1.6; }
+
+    /* ── Responsive ── */
+    @media (max-width: 620px) {
+      body { padding: 1rem 0.5rem; }
+      .page { padding: 1.5rem 1.25rem; border-radius: 12px; }
+      .header { flex-direction: column; }
+      .header-right { text-align: left; }
+      .tagline { padding-left: 0; }
+      .description { max-width: 100%; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+      .logo-name { font-size: 22px; }
+    }
+
+    @media (max-width: 400px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-val { font-size: 18px; }
+      .econ-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-row">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#FAEEDA"/>
+          <path d="M16 8C16 8 10 13 10 18C10 21.3 12.7 24 16 24C19.3 24 22 21.3 22 18C22 13 16 8 16 8Z" fill="#BA7517"/>
+          <circle cx="16" cy="18" r="3" fill="#FAEEDA"/>
+        </svg>
+        <span class="logo-name">Spice Capital</span>
+      </div>
+      <p class="tagline">The first institutional stop for founders.</p>
+      <p class="description">Backing high-conviction, early-stage founders operating at the intersection of AI, automation, and cultural arbitrage.</p>
+      <div class="pill-row">
+        <span class="badge-fund">Fund II — 2026</span>
+        <span class="badge-pill">Seed &amp; Pre-Seed</span>
+        <span class="badge-pill">AI</span>
+        <span class="badge-pill">Blockchain</span>
+        <span class="badge-pill">Consumer</span>
+        <span class="badge-pill">Deep Tech</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <p class="confidential">Confidential — Mid-Deployment Summary</p>
+      <p class="date">Q2 2026</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-cell">
+      <p class="stat-label">Target size</p>
+      <p class="stat-val">$13M</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-label">Raised to date</p>
+      <p class="stat-val">$10.65M</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-label">Deployed</p>
+      <p class="stat-val">~$6.5M</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-label">Portfolio</p>
+      <p class="stat-val">12 Active</p>
+    </div>
+  </div>
+
+  <!-- Thesis + Portfolio -->
+  <div class="two-col">
+    <div>
+      <p class="section-head">Investment thesis</p>
+      <div class="thesis-item">
+        <span class="thesis-num">01</span>
+        <p class="thesis-text"><strong>The Rational Consumer:</strong> AI turns consumers into rational optimizers behaving like B2B enterprise buyers. We fund the agentic workflows capturing this market.</p>
+      </div>
+      <div class="thesis-item">
+        <span class="thesis-num">02</span>
+        <p class="thesis-text"><strong>Bottoms Up Investing:</strong> As digital creation approaches zero-marginal cost, we back highly specific, deterministic workflows or localized physical assets.</p>
+      </div>
+      <div class="thesis-item">
+        <span class="thesis-num">03</span>
+        <p class="thesis-text"><strong>We Fund the Net New:</strong> We back founders defining categories that don't exist yet — no public market comp. For that we are rewarded a great entry price and a reputation for being high conviction, compounding into a street cred flywheel that keeps the best founders coming to us first.</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-head">Portfolio highlights</p>
+      <div class="portfolio-list">
+        <div class="co-row">
+          <div class="co-dot"></div>
+          <div>
+            <p class="co-name">Resolvd.ai</p>
+            <p class="co-note">Healthcare AI · $7M Seed Round</p>
+            <p class="co-customers">Customers: Emory, Grady, Wellstar</p>
+          </div>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="co-dot"></div>
+          <div>
+            <p class="co-name">Skej</p>
+            <p class="co-note">Applied AI · $AMZN Pilot</p>
+          </div>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="co-dot"></div>
+          <div>
+            <p class="co-name">Girl Beer</p>
+            <p class="co-note">CPG · $7M Expected Revenue 2026 · Top 20% Whole Foods Velocity</p>
+          </div>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="co-dot"></div>
+          <div>
+            <p class="co-name">Aesthetic</p>
+            <p class="co-note">Agentic Shopping · 15,000+ Users · $135 AOV</p>
+          </div>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="co-dot"></div>
+          <div>
+            <p class="co-name">Kangaroo Biomedical</p>
+            <p class="co-note">Deep Tech · Artificial Wombs · Co-Founded by Dr. George Church</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- GP + Fund Economics -->
+  <div class="two-col">
+    <div>
+      <p class="section-head">General partner</p>
+      <div class="gp-row">
+        <div class="avatar">MB</div>
+        <div style="flex:1;">
+          <p class="gp-name">Maya Bakhai</p>
+          <p class="gp-title">Founder &amp; Managing Partner · Forbes 30 Under 30</p>
+          <p class="track-head">Prior track record</p>
+          <div class="track-section">
+            <p class="track-sub">Unicorns <em>($1B+ valuation)</em></p>
+            <div class="pills-vertical">
+              <span class="co-pill">Mercury</span>
+              <span class="co-pill">Postmates</span>
+              <span class="co-pill">Rubrik</span>
+              <span class="co-pill">Hugging Face</span>
+              <span class="co-pill">Underdog Fantasy</span>
+              <span class="co-pill">Ethos</span>
+              <span class="co-pill">Skydio</span>
+            </div>
+          </div>
+          <div class="track-section">
+            <p class="track-sub">Decacorns <em>($10B+ valuation)</em></p>
+            <div class="pills-vertical">
+              <span class="co-pill">Robinhood</span>
+              <span class="co-pill">WHOOP</span>
+              <span class="co-pill">Coinbase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-head">Fund economics</p>
+      <div class="econ-grid">
+        <div class="econ-cell">
+          <p class="stat-label">Mgmt. fee</p>
+          <p class="econ-val">2.0%</p>
+        </div>
+        <div class="econ-cell">
+          <p class="stat-label">Carry</p>
+          <p class="econ-val">20%</p>
+        </div>
+        <div class="econ-cell">
+          <p class="stat-label">Target positions</p>
+          <p class="econ-val">20–24</p>
+        </div>
+        <div class="econ-cell">
+          <p class="stat-label">Fund life</p>
+          <p class="econ-val">10 years</p>
+        </div>
+      </div>
+      <p class="econ-note">Strict portfolio discipline enforcing alpha generation through concentration.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div>
+      <p class="cta-title">Ready to learn more?</p>
+      <p class="cta-sub">Contact us to receive the full data room and schedule an LP call.</p>
+    </div>
+    <div class="contact-pills">
+      <a href="mailto:maya@spicecapital.xyz" class="contact-pill">maya@spicecapital.xyz</a>
+      <a href="https://spicecapital.xyz" class="contact-pill">spicecapital.xyz</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">This document is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Past performance is not indicative of future results.</p>
+
+</div>
+</body>
+</html>
