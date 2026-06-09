@@ -15,17 +15,7 @@
       --border:#dedad2;--border-light:#edeae3;--bg:#ffffff;--bg-secondary:#f8f6f1;
     }
     body { font-family:'DM Sans',sans-serif;color:var(--text-primary);background:var(--bg-secondary);min-height:100vh;padding:2.5rem 1rem;-webkit-font-smoothing:antialiased; }
-    .editor-toolbar { max-width:800px;margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,0.94);border:0.5px solid var(--border);border-radius:12px;padding:10px 12px;position:sticky;top:12px;z-index:20;box-shadow:0 10px 30px rgba(75,58,26,0.08);backdrop-filter:blur(14px); }
-    .editor-status { font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);white-space:nowrap; }
-    .editor-actions { display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end; }
-    .editor-button { appearance:none;border:0.5px solid var(--border);border-radius:20px;background:var(--bg);color:var(--text-secondary);font:500 12px/1 'DM Sans',sans-serif;padding:8px 13px;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s; }
-    .editor-button:hover { color:var(--amber-400);border-color:var(--amber-400); }
-    .editor-button.primary { background:var(--amber-900);border-color:var(--amber-900);color:#fff; }
-    .editor-button.primary:hover { background:var(--amber-400);border-color:var(--amber-400);color:#fff; }
     .page { max-width:800px;margin:0 auto;background:var(--bg);border-radius:16px;border:0.5px solid var(--border);padding:2.5rem 2.5rem 2rem; }
-    .page[contenteditable="true"] { outline:1.5px solid var(--amber-400);outline-offset:5px; }
-    .page[contenteditable="true"] a { cursor:text; }
-    .page[contenteditable="true"] *:focus { outline:1px dotted var(--amber-400);outline-offset:2px; }
     .header { display:flex;justify-content:space-between;align-items:flex-start;gap:24px; }
     .header-left { flex:1;min-width:0; }
     .header-right { flex-shrink:0;text-align:right; }
@@ -88,22 +78,12 @@
     .contact-pill { font-size:12px;color:var(--text-secondary);padding:6px 14px;border:0.5px solid var(--border);border-radius:20px;text-decoration:none;transition:color 0.15s,border-color 0.15s; }
     .contact-pill:hover { color:var(--amber-400);border-color:var(--amber-400); }
     .disclaimer { font-size:10px;color:var(--text-tertiary);line-height:1.65; }
-	    @media(max-width:640px){body{padding:1rem 0.5rem}.editor-toolbar{position:static;align-items:flex-start;flex-direction:column}.editor-actions{justify-content:flex-start}.page{padding:1.5rem 1.25rem;border-radius:12px}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.stats-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:24px}.co-row{grid-template-columns:1fr}.moic-badge{width:max-content}.logo-name{font-size:24px}.description{max-width:100%}}
-    @media print{body{background:#fff;padding:0}.editor-toolbar{display:none}.page{border:0;border-radius:0;max-width:none}}
+    @media(max-width:640px){body{padding:1rem 0.5rem}.page{padding:1.5rem 1.25rem;border-radius:12px}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.stats-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:24px}.co-row{grid-template-columns:1fr}.moic-badge{width:max-content}.logo-name{font-size:24px}.description{max-width:100%}}
+    @media print{body{background:#fff;padding:0}.page{border:0;border-radius:0;max-width:none}}
   </style>
 </head>
 <body>
-<div class="editor-toolbar" aria-label="Document editor controls">
-  <p class="editor-status" id="editorStatus">View mode</p>
-  <div class="editor-actions">
-    <button class="editor-button primary" type="button" id="editToggle">Edit</button>
-    <button class="editor-button" type="button" id="saveEdits">Save</button>
-    <button class="editor-button" type="button" id="resetEdits">Reset</button>
-    <button class="editor-button" type="button" id="printDoc">Print</button>
-  </div>
-</div>
-
-<div class="page" id="editableDocument" contenteditable="false" spellcheck="true">
+<div class="page">
 
   <div class="header">
     <div class="header-left">
@@ -372,74 +352,5 @@
   <p class="disclaimer">This document is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Past performance is not indicative of future results.</p>
 
 </div>
-<script>
-  const storageKey = 'spice-executive-summary-html-2026-06-08-performance';
-  const doc = document.getElementById('editableDocument');
-  const status = document.getElementById('editorStatus');
-  const editToggle = document.getElementById('editToggle');
-  const saveEdits = document.getElementById('saveEdits');
-  const resetEdits = document.getElementById('resetEdits');
-  const printDoc = document.getElementById('printDoc');
-  const originalHtml = doc.innerHTML;
-  let saveTimer;
-
-  function setEditing(isEditing) {
-    doc.setAttribute('contenteditable', String(isEditing));
-    status.textContent = isEditing ? 'Editing' : 'View mode';
-    editToggle.textContent = isEditing ? 'Done' : 'Edit';
-    editToggle.classList.toggle('primary', !isEditing);
-    if (isEditing) {
-      doc.focus();
-    }
-  }
-
-  function saveDocument(message = 'Saved') {
-    localStorage.setItem(storageKey, doc.innerHTML);
-    status.textContent = message;
-    window.clearTimeout(saveTimer);
-    saveTimer = window.setTimeout(() => {
-      status.textContent = doc.getAttribute('contenteditable') === 'true' ? 'Editing' : 'View mode';
-    }, 1400);
-  }
-
-  const savedHtml = localStorage.getItem(storageKey);
-  if (savedHtml) {
-    doc.innerHTML = savedHtml;
-    status.textContent = 'Saved draft loaded';
-  }
-
-  editToggle.addEventListener('click', () => {
-    const isEditing = doc.getAttribute('contenteditable') === 'true';
-    if (isEditing) {
-      saveDocument();
-    }
-    setEditing(!isEditing);
-  });
-
-  saveEdits.addEventListener('click', () => saveDocument());
-
-  resetEdits.addEventListener('click', () => {
-    if (!window.confirm('Reset this browser draft to the published version?')) {
-      return;
-    }
-    localStorage.removeItem(storageKey);
-    doc.innerHTML = originalHtml;
-    setEditing(false);
-    status.textContent = 'Draft reset';
-  });
-
-  printDoc.addEventListener('click', () => window.print());
-
-  doc.addEventListener('input', () => {
-    window.clearTimeout(saveTimer);
-    saveTimer = window.setTimeout(() => saveDocument('Autosaved'), 600);
-  });
-
-  doc.addEventListener('click', (event) => {
-    if (doc.getAttribute('contenteditable') === 'true' && event.target.closest('a')) {
-      event.preventDefault();
-    }
-  });
-</script>
 </body>
 </html>
