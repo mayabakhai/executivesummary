@@ -41,7 +41,7 @@
     .aum-val { font-size:24px;font-weight:600;color:var(--text-primary);letter-spacing:-0.02em;line-height:1; }
     .aum-sub { font-size:10px;color:var(--text-tertiary);margin-top:3px; }
     .divider { height:0.5px;background:var(--border-light);margin:22px 0; }
-    .stats-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-light);border:0.5px solid var(--border-light);border-radius:10px;overflow:hidden;margin-bottom:26px; }
+    .stats-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-light);border:0.5px solid var(--border-light);border-radius:10px;overflow:hidden;margin-bottom:26px; }
     .stat-cell { background:var(--bg);padding:16px 18px; }
     .stat-label { font-size:10px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:5px; }
     .stat-val { font-size:22px;font-weight:500;color:var(--text-primary);letter-spacing:-0.01em; }
@@ -53,7 +53,7 @@
     .thesis-text { font-size:12.5px;line-height:1.65;color:var(--text-secondary); }
     .thesis-text strong { color:var(--text-primary);font-weight:500; }
     .portfolio-list { display:flex;flex-direction:column; }
-    .co-row { display:flex;align-items:flex-start;gap:9px;padding:10px 0; }
+    .co-row { display:grid;grid-template-columns:1fr auto;gap:10px;align-items:flex-start;padding:9px 0; }
     .co-dot { width:5px;height:5px;border-radius:50%;background:var(--amber-400);flex-shrink:0;margin-top:6px; }
     .co-name { font-size:13px;font-weight:500;color:var(--text-primary);display:block; }
     .co-note { font-size:11px;color:var(--text-secondary);margin-top:2px;line-height:1.45; }
@@ -61,6 +61,9 @@
     .co-divider { height:0.5px;background:var(--border-light); }
     .co-name-link { text-decoration:none;color:var(--text-primary);font-size:13px;font-weight:500;display:inline-block;transition:color 0.15s; }
     .co-name-link:hover { color:var(--amber-400); }
+    .company-main { display:flex;gap:9px;align-items:flex-start;min-width:0; }
+    .moic-badge { font-size:11px;font-weight:600;color:var(--amber-900);background:var(--amber-50);border:0.5px solid rgba(186,117,23,0.18);border-radius:20px;padding:4px 9px;white-space:nowrap; }
+    .source-note { font-size:10px;color:var(--text-tertiary);line-height:1.55;margin-top:10px; }
     .gp-row { display:flex;gap:14px;align-items:flex-start; }
     .avatar { width:42px;height:42px;border-radius:50%;background:var(--amber-50);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--amber-900);flex-shrink:0;border:0.5px solid var(--border); }
     .gp-name { font-size:14px;font-weight:500;margin-bottom:2px; }
@@ -85,7 +88,7 @@
     .contact-pill { font-size:12px;color:var(--text-secondary);padding:6px 14px;border:0.5px solid var(--border);border-radius:20px;text-decoration:none;transition:color 0.15s,border-color 0.15s; }
     .contact-pill:hover { color:var(--amber-400);border-color:var(--amber-400); }
     .disclaimer { font-size:10px;color:var(--text-tertiary);line-height:1.65; }
-    @media(max-width:640px){body{padding:1rem 0.5rem}.editor-toolbar{position:static;align-items:flex-start;flex-direction:column}.editor-actions{justify-content:flex-start}.page{padding:1.5rem 1.25rem;border-radius:12px}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.stats-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:24px}.logo-name{font-size:24px}.description{max-width:100%}}
+	    @media(max-width:640px){body{padding:1rem 0.5rem}.editor-toolbar{position:static;align-items:flex-start;flex-direction:column}.editor-actions{justify-content:flex-start}.page{padding:1.5rem 1.25rem;border-radius:12px}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.stats-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:24px}.co-row{grid-template-columns:1fr}.moic-badge{width:max-content}.logo-name{font-size:24px}.description{max-width:100%}}
     @media print{body{background:#fff;padding:0}.editor-toolbar{display:none}.page{border:0;border-radius:0;max-width:none}}
   </style>
 </head>
@@ -131,22 +134,26 @@
   <div class="divider"></div>
 
   <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
-    <p style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-400);">Fund II — Mid-Deployment Summary</p>
-    <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);">Confidential · Q2 2026</p>
+    <p style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-400);">Fund II — Performance Snapshot</p>
+    <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);">Confidential · Source export June 8, 2026</p>
   </div>
 
   <div class="stats-grid">
     <div class="stat-cell">
-      <p class="stat-label">Called to date</p>
-      <p class="stat-val">$10.65M</p>
+      <p class="stat-label">Completed cost</p>
+      <p class="stat-val">$6.04M</p>
     </div>
     <div class="stat-cell">
-      <p class="stat-label">Deployed</p>
-      <p class="stat-val">~$6.5M</p>
+      <p class="stat-label">Current FV</p>
+      <p class="stat-val">$6.62M</p>
     </div>
     <div class="stat-cell">
-      <p class="stat-label">Portfolio</p>
-      <p class="stat-val">12 Active</p>
+      <p class="stat-label">Gross MOIC</p>
+      <p class="stat-val">1.10x</p>
+    </div>
+    <div class="stat-cell">
+      <p class="stat-label">Completed Cos.</p>
+      <p class="stat-val">10</p>
     </div>
   </div>
 
@@ -168,49 +175,119 @@
     </div>
 
     <div>
-      <p class="section-head">Portfolio highlights</p>
+      <p class="section-head">Completed Fund II portfolio</p>
       <div class="portfolio-list">
         <div class="co-row">
-          <div class="co-dot"></div>
-          <div>
-            <a href="https://resolvd.ai" target="_blank" class="co-name-link">Resolvd.ai</a>
-            <p class="co-note">Healthcare AI · $7M Seed Round</p>
-            <p class="co-customers">Emory, Grady, Wellstar</p>
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://resolvd.ai" target="_blank" class="co-name-link">Resolvd.ai</a>
+              <p class="co-note">$500K cost · $877K current fair value</p>
+            </div>
           </div>
+          <span class="moic-badge">1.75x</span>
         </div>
         <div class="co-divider"></div>
         <div class="co-row">
-          <div class="co-dot"></div>
-          <div>
-            <a href="https://skej.com" target="_blank" class="co-name-link">Skej</a>
-            <p class="co-note">Applied AI · $AMZN Pilot</p>
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://skej.com" target="_blank" class="co-name-link">Skej</a>
+              <p class="co-note">$1.00M cost · $1.00M current fair value</p>
+            </div>
           </div>
+          <span class="moic-badge">1.00x</span>
         </div>
         <div class="co-divider"></div>
         <div class="co-row">
-          <div class="co-dot"></div>
-          <div>
-            <a href="https://www.hurraysgirlbeer.com/" target="_blank" class="co-name-link">Girl Beer</a>
-            <p class="co-note">CPG · $7M Expected Revenue 2026 · Top 20% Whole Foods Velocity</p>
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://www.hurraysgirlbeer.com/" target="_blank" class="co-name-link">Girl Beer</a>
+              <p class="co-note">$500K completed cost · $650K current fair value</p>
+            </div>
           </div>
+          <span class="moic-badge">1.30x</span>
         </div>
         <div class="co-divider"></div>
         <div class="co-row">
-          <div class="co-dot"></div>
-          <div>
-            <a href="https://myaesthetic.ai" target="_blank" class="co-name-link">Aesthetic</a>
-            <p class="co-note">Agentic Shopping · 15,000+ Users · $135 AOV</p>
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://myaesthetic.ai" target="_blank" class="co-name-link">Aesthetic</a>
+              <p class="co-note">$500K cost · $500K current fair value</p>
+            </div>
           </div>
+          <span class="moic-badge">1.00x</span>
         </div>
         <div class="co-divider"></div>
         <div class="co-row">
-          <div class="co-dot"></div>
-          <div>
-            <span class="co-name">Kangaroo Bio <span style="font-size:9px;font-weight:500;letter-spacing:0.07em;color:var(--text-tertiary);vertical-align:middle;">STEALTH</span></span>
-            <p class="co-note">Deep Tech · Artificial Wombs · Co-Founded by Dr. George Church</p>
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <span class="co-name">Kangaroo Biomedical <span style="font-size:9px;font-weight:500;letter-spacing:0.07em;color:var(--text-tertiary);vertical-align:middle;">STEALTH</span></span>
+              <p class="co-note">$736K cost · $794K current fair value</p>
+            </div>
           </div>
+          <span class="moic-badge">1.08x</span>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://accessgrid.com" target="_blank" class="co-name-link">AccessGrid</a>
+              <p class="co-note">$650K cost · $650K current fair value</p>
+            </div>
+          </div>
+          <span class="moic-badge">1.00x</span>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <a href="https://www.hypeshot.io/" target="_blank" class="co-name-link">Hypeshot</a>
+              <p class="co-note">$750K cost · $750K current fair value</p>
+            </div>
+          </div>
+          <span class="moic-badge">1.00x</span>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <span class="co-name">Airr Inc.</span>
+              <p class="co-note">$500K cost · $500K current fair value</p>
+            </div>
+          </div>
+          <span class="moic-badge">1.00x</span>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <span class="co-name">Runner</span>
+              <p class="co-note">$625K cost · $625K current fair value</p>
+            </div>
+          </div>
+          <span class="moic-badge">1.00x</span>
+        </div>
+        <div class="co-divider"></div>
+        <div class="co-row">
+          <div class="company-main">
+            <div class="co-dot"></div>
+            <div>
+              <span class="co-name">American Spend</span>
+              <p class="co-note">$276K cost · $276K current fair value</p>
+            </div>
+          </div>
+          <span class="moic-badge">1.00x</span>
         </div>
       </div>
+      <p class="source-note">MOIC = current fair value plus distributions and recycled value, divided by completed investment amount. Pending rows excluded: heva approved, Cakelore created, Barbelle submitted, and an additional Girl Beer closing allocation.</p>
     </div>
   </div>
 
@@ -296,7 +373,7 @@
 
 </div>
 <script>
-  const storageKey = 'spice-executive-summary-html';
+  const storageKey = 'spice-executive-summary-html-2026-06-08-performance';
   const doc = document.getElementById('editableDocument');
   const status = document.getElementById('editorStatus');
   const editToggle = document.getElementById('editToggle');
