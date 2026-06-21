@@ -14,15 +14,15 @@
       --text-primary:#1a1a1a;--text-secondary:#5a5552;--text-tertiary:#96918c;
       --border:#dedad2;--border-light:#edeae3;--bg:#ffffff;--bg-secondary:#f8f6f1;
     }
-    body { font-family:'DM Sans',sans-serif;color:var(--text-primary);background:var(--bg-secondary);min-height:100vh;padding:2.5rem 1rem;-webkit-font-smoothing:antialiased; }
-    .page { max-width:800px;margin:0 auto;background:var(--bg);border-radius:16px;border:0.5px solid var(--border);padding:2.5rem 2.5rem 2rem; }
+    body { font-family:'DM Sans',sans-serif;color:var(--text-primary);background:var(--bg-secondary);min-height:100vh;padding:2rem 1rem;-webkit-font-smoothing:antialiased; }
+    .page { max-width:1040px;margin:0 auto;background:var(--bg);border-radius:16px;border:0.5px solid var(--border);padding:2.5rem 2.5rem 2rem; }
     .header { display:flex;justify-content:space-between;align-items:flex-start;gap:24px; }
     .header-left { flex:1;min-width:0; }
     .header-right { flex-shrink:0;text-align:right; }
     .logo-row { display:flex;align-items:center;gap:10px;margin-bottom:6px; }
     .logo-name { font-family:'Playfair Display',serif;font-size:28px;font-weight:600;letter-spacing:-0.02em;line-height:1; }
     .tagline { font-size:12px;color:var(--amber-400);font-weight:500;letter-spacing:0.03em;margin:0 0 10px; }
-    .description { font-size:13px;color:var(--text-secondary);margin:0 0 14px;max-width:420px;line-height:1.65; }
+    .description { font-size:13px;color:var(--text-secondary);margin:0 0 14px;max-width:560px;line-height:1.65; }
     .pill-row { display:flex;flex-wrap:wrap;gap:6px; }
     .badge-fund { display:inline-block;font-size:11px;font-weight:500;padding:4px 11px;border-radius:20px;background:var(--amber-50);color:var(--amber-900);letter-spacing:0.03em; }
     .badge-pill { font-size:11px;padding:4px 11px;border-radius:20px;border:0.5px solid var(--border);color:var(--text-secondary); }
@@ -31,24 +31,31 @@
     .aum-val { font-size:24px;font-weight:600;color:var(--text-primary);letter-spacing:-0.02em;line-height:1; }
     .aum-sub { font-size:10px;color:var(--text-tertiary);margin-top:3px; }
     .divider { height:0.5px;background:var(--border-light);margin:22px 0; }
+    .snapshot-row { display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:10px; }
+    .snapshot-meta { font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);text-align:right; }
     .stats-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-light);border:0.5px solid var(--border-light);border-radius:10px;overflow:hidden;margin-bottom:26px; }
     .stat-cell { background:var(--bg);padding:16px 18px; }
     .stat-label { font-size:10px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:5px; }
     .stat-val { font-size:22px;font-weight:500;color:var(--text-primary);letter-spacing:-0.01em; }
     .two-col { display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:26px; }
+    .section-block { margin-bottom:26px; }
     .section-head { font-size:9px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--amber-400);margin-bottom:14px;padding-bottom:8px;border-bottom:0.5px solid var(--border-light); }
-    .thesis-item { display:flex;gap:12px;margin-bottom:14px; }
+    .thesis-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+    .thesis-item { display:flex;gap:12px;margin-bottom:0;border:0.5px solid var(--border-light);border-radius:10px;padding:14px;background:var(--bg-secondary); }
     .thesis-item:last-child { margin-bottom:0; }
     .thesis-num { font-family:'Playfair Display',serif;font-size:22px;color:var(--border);line-height:1.15;min-width:24px;flex-shrink:0; }
     .thesis-text { font-size:12.5px;line-height:1.65;color:var(--text-secondary); }
     .thesis-text strong { color:var(--text-primary);font-weight:500; }
-    .portfolio-list { display:flex;flex-direction:column; }
-    .co-row { display:grid;grid-template-columns:1fr auto;gap:10px;align-items:flex-start;padding:9px 0; }
+    .portfolio-head { display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;padding-bottom:8px;border-bottom:0.5px solid var(--border-light); }
+    .portfolio-head .section-head { margin:0;padding:0;border:0; }
+    .portfolio-count { font-size:10px;color:var(--text-tertiary);letter-spacing:0.08em;text-transform:uppercase;text-align:right; }
+    .portfolio-list { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px; }
+    .co-row { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:flex-start;padding:12px;border:0.5px solid var(--border-light);border-radius:10px;background:var(--bg);min-height:112px; }
     .co-dot { width:5px;height:5px;border-radius:50%;background:var(--amber-400);flex-shrink:0;margin-top:6px; }
     .co-name { font-size:13px;font-weight:500;color:var(--text-primary);display:block; }
     .co-note { font-size:11px;color:var(--text-secondary);margin-top:2px;line-height:1.45; }
     .co-customers { font-size:11px;color:var(--text-tertiary);margin-top:2px;font-style:italic; }
-    .co-divider { height:0.5px;background:var(--border-light); }
+    .co-divider { display:none; }
     .website-link { color:#2563eb;text-decoration:none;font-size:11px;font-weight:500;margin-left:6px;white-space:nowrap; }
     .website-link:hover { color:#1d4ed8;text-decoration:underline; }
     .company-main { display:flex;gap:9px;align-items:flex-start;min-width:0; }
@@ -81,7 +88,8 @@
     .contact-pill { font-size:12px;color:var(--text-secondary);padding:6px 14px;border:0.5px solid var(--border);border-radius:20px;text-decoration:none;transition:color 0.15s,border-color 0.15s; }
     .contact-pill:hover { color:var(--amber-400);border-color:var(--amber-400); }
     .disclaimer { font-size:10px;color:var(--text-tertiary);line-height:1.65; }
-    @media(max-width:640px){body{padding:1rem 0.5rem}.page{padding:1.5rem 1.25rem;border-radius:12px}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.stats-grid{grid-template-columns:repeat(2,1fr)}.two-col{grid-template-columns:1fr;gap:24px}.co-row{grid-template-columns:1fr}.moic-badge{width:max-content}.logo-name{font-size:24px}.description{max-width:100%}}
+    @media(max-width:860px){.page{max-width:720px}.thesis-grid,.portfolio-list{grid-template-columns:1fr}.co-row{min-height:0}.two-col{grid-template-columns:1fr;gap:24px}}
+    @media(max-width:640px){body{padding:0;background:var(--bg)}.page{padding:1.25rem 1rem 1.5rem;border:0;border-radius:0}.header{flex-direction:column;gap:16px}.header-right{text-align:left;width:100%}.aum-block{display:block;text-align:left}.snapshot-row,.portfolio-head{align-items:flex-start;flex-direction:column;gap:6px}.snapshot-meta,.portfolio-count{text-align:left}.stats-grid{grid-template-columns:1fr}.stat-cell{padding:14px}.thesis-item{padding:13px}.co-row{grid-template-columns:1fr;padding:12px}.moic-badge{width:max-content}.logo-name{font-size:24px}.description{max-width:100%}.contact-pills{width:100%}.contact-pill{width:100%;text-align:center}}
     @media print{body{background:#fff;padding:0}.page{border:0;border-radius:0;max-width:none}}
   </style>
 </head>
@@ -116,9 +124,9 @@
 
   <div class="divider"></div>
 
-  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+  <div class="snapshot-row">
     <p style="font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber-400);">Fund II — Performance Snapshot</p>
-    <p style="font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);">Confidential · Source export June 21, 2026</p>
+    <p class="snapshot-meta">Confidential · Source export June 21, 2026</p>
   </div>
 
   <div class="stats-grid">
@@ -136,9 +144,9 @@
     </div>
   </div>
 
-  <div class="two-col">
-    <div>
+  <div class="section-block">
       <p class="section-head">Investment thesis</p>
+    <div class="thesis-grid">
       <div class="thesis-item">
         <span class="thesis-num">01</span>
         <p class="thesis-text"><strong>The Rational Consumer:</strong> AI gives consumers the leverage that used to belong to enterprises. We back the products that make comparing, buying, scheduling, and deciding feel native in this new behavior.</p>
@@ -152,9 +160,13 @@
         <p class="thesis-text"><strong>We Fund the Net New:</strong> We like ideas with no obvious comp. If consensus capital can underwrite it on a spreadsheet, it is probably already late. Spice is built to invest before the market has the language.</p>
       </div>
     </div>
+  </div>
 
-    <div>
+  <div class="section-block">
+    <div class="portfolio-head">
       <p class="section-head">Completed Fund II portfolio</p>
+      <p class="portfolio-count">11 completed investments</p>
+    </div>
       <div class="portfolio-list">
         <div class="co-row">
           <div class="company-main">
@@ -322,7 +334,6 @@
         </div>
       </div>
       <p class="source-note">MOIC = current fair value plus distributions and recycled value, divided by completed investment amount.</p>
-    </div>
   </div>
 
   <div class="divider"></div>
